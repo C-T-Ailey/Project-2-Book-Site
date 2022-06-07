@@ -1,0 +1,27 @@
+<div>
+    <div>
+        <h3><%= author.firstName, author.lastName %></h3>
+    </div>
+
+    <div>Nationality: <%= author.nationality %></div>
+    <div>Year of Birth: <%= author.birthYear %></div>
+    <div>Record Created At: <%= moment(author.createdAt).fromNow() %></div>
+    <div>Record Last Updated At: <%= moment(author.updatedAt).fromNow() %></div>
+
+    <br>
+
+<% author.book.forEach(function(book){ %>
+
+    <hr>
+
+    <div>
+        Title: <a href="/book/detail?id=<%= book.id %>"><%= book.title %></a>
+    </div>
+
+    <div>
+        Year Published: <%= book.yearPublished %>
+    </div>
+
+<% }) %>
+
+</div>
